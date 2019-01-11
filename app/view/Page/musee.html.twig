@@ -1,0 +1,55 @@
+{% extends 'Layout/layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Musees
+{% endblock %}
+
+{% block content %}
+  <div class="w100 grow-2 d-flex flex-row position-r">
+
+    <div class="w100"> 
+      <ul class="slider">
+          {% for foto in fotosmusee %}
+          <li style="background: url('{{ foto.src }}')" class="photo"></li>
+          {% endfor %}
+      </ul>
+    </div>
+
+      <div class="info position-a w50 p20"><!-- INFOS MUSEE -->
+
+        <div class="w100">
+          <h3 class="ff2 fs40">{{ musee.MUS_NOM }}</h3>
+          <p class="fs12">{{ musee.MUS_ADRESSE }} - {{ musee.MUS_CP}} {{ musee.MUS_VILLE}}
+          </p>
+        </div>
+
+        <div class="w100 d-flex flex-row">
+
+            <div class="w50 pt20 fs16">
+              <p class="mt10"><span class="fs18">Fermeture annuelle :</span><br>
+                {{ musee.MUS_FERME}}
+              </p>
+
+              <p class="mt10"><span class="fs18">Période d'ouverture :</span> </br>
+                {{ musee.MUS_OUVERT}}
+              </p>
+
+              <p class="mt10"><span class="fs18">Ouverture nocturne :</span> </br>
+                {{ musee.MUS_NOCTURNE}}
+              </p>
+            </div>
+
+            <div class="w50 pl20 pt20 fs16">
+                <p class="p10 mt10 bc2"><a href="tel:{{ musee.MUS_TEL }}" class="c3 text-nodeco text-uppercase"><i class="fas fa-phone"></i> {{ musee.MUS_TEL }}</a></p>
+                <p class="p10 mt10 bc2 c3 text-nodeco text-uppercase"><i class="fas fa-fax"></i> {{ musee.MUS_FAX }}</p>
+                <p class="p10 mt10 bc2 c3 text-nodeco text-uppercase">{{ musee.MUS_SITE }}</p>
+            </div>
+
+        </div>
+        
+      </div> 
+
+  </div>
+
+</div>
+{% endblock %}

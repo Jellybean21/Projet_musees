@@ -1,0 +1,20 @@
+{% extends 'Layout/layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Page Introuvable</title>
+{% endblock %}
+
+{% block content %}
+    <div class="w75 mrauto mlauto">
+        <h1 class=" text-center ff1 fs18 pt20">404 - Page Introuvable</h1>
+          <div class="d-flex w100 pt20" >
+            <img src="assets/img/unnamedresized.png" class="w100">
+              <div class="p20 ml20 mr20  borderbox intro">
+                <p class="fs14 ff1">Il n' y a rien ici , pour l'instant , plus tard peut être cette page existera t-elle.</p>
+                <p class="fs14 ff1">En attendant vous pouvez retourner sur la page d'accueil en cliquant sur le logo en haut à gauche. </p>
+              </div>
+              <img src="assets/img/unnamedreverse.png"class="w100">
+          </div>
+
+    </div>
+{% endblock %}

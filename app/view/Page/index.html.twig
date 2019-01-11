@@ -1,0 +1,49 @@
+{% extends 'Layout/layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Home
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="w100 grow-2 d-flex flex-row position-r">
+        
+        <div class="w75 grow-2 bg1 d-flex justify-start align-center p20">
+
+            <div class="w50 m20 intro">
+                <h3 class="ff2 c3 fs30 mb20">Lorem ipsum dolor</h3>
+                <p class="c3 fs20">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro similique pariatur unde sapiente repellat, rerum aspernatur labore repudiandae itaque, et voluptatem cum atque voluptatibus! Harum, blanditiis accusamus. Omnis, quasi minus.</p>
+            </div>
+
+        </div>
+
+        <div class="w25 h100"></div>
+
+        <div class="container-svg position-a w50">
+            <object id="carte" type="image/svg+xml" data="./assets/img/carte.svg" width="100%"></object>
+        </div>
+
+    </div>
+
+</div>
+
+    <div class="w100 h250p d-flex flex-column justify-center align-center">
+        <p class="ff2 fs30">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <p class="fs20">Ut, voluptates nesciunt. Dicta aliquam iusto soluta eius nihil.</p>
+    </div>
+
+    <section class="w100 d-flex flex-column align-center justify-center">
+
+        <div class="w75 d-flex flex-row justify-start flex-wrap">
+            {% for theme in themes %}
+                <div class="p10 ml10 mr10 mb10 bc1"><a href="./theme/{{ theme.ID_THEME }}" data-id="{{ theme.ID_THEME }}" class="text-nodeco c3">{{ theme.TH_LIBELLE }}</a></div>
+            {% endfor %}
+        </div>
+
+        <div id="resultat" class="w75 d-flex flex-row flex-wrap justify-center"><!-- AFFICHAGE RESULTAT DES MUSEES PAR DEPARTEMENT -->
+        <!-- VOIR AJAX DANS ASSETS/JS/SCRIPT.JS -->
+        </div>
+    </section>
+
+{% endblock %}
